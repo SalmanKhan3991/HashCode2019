@@ -14,13 +14,13 @@ public class Application {
             ClassLoader classLoader = new Application().getClass().getClassLoader();
             file = new File(classLoader.getResource(fileName).getFile());
             Scanner sc = new Scanner(file);
-            int nPhotos = Integer.parseInt(sc.next());
+            int nPhotos = Integer.parseInt(sc.nextLine());
             int count = 0;
             while(count < nPhotos) {
-                String photo = sc.next();
+                String photo = sc.nextLine();
                 String[] values = photo.split(" ");
                 int len = values.length;
-                boolean isVertical = values[0] == "V"? true:false;
+                boolean isVertical = values[0] == "V"?true:false;
                 List<String> tags = new ArrayList<String>();
                 for(int i=2; i< len;i++) {
                     tags.add(values[i]);
@@ -32,5 +32,7 @@ public class Application {
         } catch (Exception e) {
             file = null;
         }
+
+        System.out.println(listOfImages.get(0).getNumOfTags());
     }
 }
