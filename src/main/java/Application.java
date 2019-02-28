@@ -1,7 +1,5 @@
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Application {
 
@@ -33,6 +31,10 @@ public class Application {
             file = null;
         }
 
-        System.out.println(listOfImages.get(0).getNumOfTags());
+        Set<String> tags = new TreeSet<String>();
+        
+        for(int i=0; i<listOfImages.size(); i++) {
+            tags.addAll(listOfImages.get(i).Tags);
+        }
     }
 }
