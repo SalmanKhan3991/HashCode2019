@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Image {
-    
+
     boolean isVertical;
     List<String> Tags = new ArrayList<String>();
     int numOfTags, index;
